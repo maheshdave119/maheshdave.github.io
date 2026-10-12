@@ -1,26 +1,33 @@
-MAHESH DAVE PORTFOLIO — STATIC GITHUB PAGES PACKAGE
+MAHESH DAVE — FRONT-END PORTFOLIO (STATIC / GITHUB PAGES READY)
 
-This package is a self-contained static version intended to work with the current GitHub Pages setting:
-Settings > Pages > Deploy from a branch > main > /(root)
+CONTENTS
+- index.html: complete responsive portfolio; CSS and JavaScript are included in the file.
+- assets/mahesh-dave.jpg: supplied profile portrait.
+- assets/Mahesh_Dave_Resume_2026.pdf: supplied resume with embedded project and credential URLs.
 
-HOW TO PREVIEW LOCALLY
+PREVIEW LOCALLY
 1. Extract the ZIP.
-2. Open index.html in Chrome, Edge, Firefox, or Safari.
-3. The page does not require npm, Node.js, React, or a build step. Fonts load from Google Fonts when internet is available; fallback fonts are included.
+2. Open index.html in Chrome, Edge, Firefox, or Safari. No Node.js, npm, build step, or backend is required.
+3. Internet access is only needed for Google Fonts and opening external project / verification links. The site itself and local assets are bundled.
 
-HOW TO PUBLISH WITH YOUR CURRENT SETTINGS
-1. Back up your current repository first.
-2. Copy index.html and the assets/ folder to the root of the repository on branch main.
-3. Commit and push. Keep Settings > Pages set to main / (root).
-4. Wait for Pages to deploy, then visit the repository's published URL.
+PUBLISH TO CURRENT GITHUB PAGES SETUP
+Your current repository is maheshdave119/maheshdave.github.io and Pages is publishing main / (root). Copy index.html and the entire assets/ directory into the repository root, commit, and push. Do not upload only index.html: the photo and resume are in assets/.
 
-IMPORTANT URL NOTE
-The current repository owner is maheshdave119 and repository name is maheshdave.github.io. That creates a project-site URL like:
+CURRENT PUBLISHED URL FOR THIS REPOSITORY
 https://maheshdave119.github.io/maheshdave.github.io/
-To use https://maheshdave.github.io/ as a GitHub personal site, the repository must be named maheshdave.github.io under the GitHub account maheshdave.
 
-CONTENT NOTES
-- Portfolio content is based on the supplied project files and resume-derived data.
-- No fake project demos, certificate verification links, or LinkedIn URL have been added.
-- The Blog section displays an honest empty state; this static preview is not connected to Supabase or an admin CMS.
-- Theme toggle and mobile navigation work without external JavaScript libraries.
+The shorter URL https://maheshdave.github.io/ requires a repository named maheshdave.github.io under the GitHub account maheshdave (or a separately configured custom domain).
+
+CONTENT & LINKS
+Content is based on the supplied 2026 resume. Project links and Adobe credential verification links were extracted from embedded PDF hyperlinks. Project cards link to the project sites when the resume provides a URL. The Salesforce/Jitterbit integration is presented as a case study without inventing a public demo link. No blog posts or fake testimonials are invented.
+
+FEATURES
+- Premium neutral / forest-green / bronze palette
+- Responsive desktop, tablet, and mobile layouts
+- Functional light/dark theme toggle (saved in local storage)
+- Animated hero, ambient orbit, floating cards, ticker, scroll reveal
+- Reduced-motion support
+- Project filters and clickable project URLs
+- Seven certification cards with verification links
+- Experience, education, technical toolkit, resume download, and contact links
+- No runtime libraries or build step required
