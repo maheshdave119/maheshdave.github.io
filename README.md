@@ -1,102 +1,37 @@
-🌐 Personal Portfolio & Blog
+# Mahesh Dave — Adobe Commerce Portfolio
 
-Welcome to my personal portfolio and blog! 🚀
+A responsive React + Vite portfolio using a warm neutral, forest-green and bronze design system, with light/dark themes and subtle motion. Portfolio copy is grounded in `Mahesh_Dave_Resume_2026.pdf`; external project links and certification verification links are omitted because the resume did not provide them.
 
-This repository contains the source code for my personal website, where I showcase my projects, share my knowledge, document my learning journey, and write blog posts about technology, programming, and personal experiences.
+## Stack
 
-✨ Features
-👨‍💻 Personal Portfolio — Introduction, skills, experience, and background.
-🚀 Projects Showcase — Explore my projects, experiments, and achievements.
-📝 Blog — Articles, tutorials, technical notes, and personal insights.
-📬 Contact — Connect with me for collaboration and opportunities.
-📱 Responsive Design — Optimized for desktop, tablet, and mobile devices.
-🌙 Modern UI — A clean, accessible, and user-friendly interface.
-🛠️ Tech Stack
+- React 19 + Vite
+- Tailwind CSS 4 and custom CSS design tokens
+- Framer Motion and Lucide icons
+- Supabase Auth/PostgREST via a small browser REST adapter
 
-The technologies used in this project include:
+## Run locally
 
-Frontend: HTML, CSS, JavaScript <!-- Update based on your actual stack -->
-Framework: React / Next.js (if applicable)
-Styling: Tailwind CSS / CSS (if applicable)
-Hosting: GitHub Pages / Vercel / Netlify
-📂 Project Structure
-personal-portfolio/
-├── public/              # Static assets and images
-├── src/                 # Website source code
-│   ├── components/      # Reusable UI components
-│   ├── pages/           # Website pages (if applicable)
-│   ├── posts/           # Blog posts (if applicable)
-│   └── styles/          # CSS and styling files
-├── README.md
-└── package.json         # Project scripts and dependencies (if applicable)
-
-
-Note: The structure may vary depending on the technologies used.
-
-🚀 Getting Started
-
-Follow these steps to run the project locally.
-
-1. Clone the repository
-git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
-
-2. Navigate to the project directory
-cd YOUR-REPOSITORY
-
-3. Install dependencies
-
-If your project uses Node.js:
-
+```bash
 npm install
-
-4. Start the development server
+cp .env.example .env.local
+# Fill in VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY
 npm run dev
+```
 
+Without Supabase configuration, the public portfolio works and the blog shows its empty state; `/admin` displays setup instructions. With Supabase configured, published blog posts load from the database and the admin login uses Supabase Auth.
 
-Use the local URL displayed in your terminal to view the website.
+## Supabase
 
-These commands may differ depending on your framework and project setup.
+Run `supabase/schema.sql` in the Supabase SQL editor. Create the first admin user manually in Auth and set trusted `app_metadata.role` to `admin`. Review all policies before launch. Never expose a service-role key in frontend code. See [ADMIN_GUIDE.md](./ADMIN_GUIDE.md) and [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md).
 
-📝 Blog
+## Important current scope
 
-This blog is a space where I share:
+The portfolio uses resume-derived bundled data for experience, projects, certifications, education, and technical toolkit. Supabase schema/RLS covers these entities, but dedicated admin CRUD forms and database-driven public rendering for those sections are not complete yet. Blog has basic draft/publish editing; its editor is a lightweight HTML textarea with formatting buttons, not a full WYSIWYG editor. Article detail pages, cover-image upload, and a media-library UI are also outstanding. The contact action uses email and does not pretend to submit a form.
 
-Technical tutorials and programming tips
-Lessons learned while building projects
-Development tools and resources
-Personal experiences and career insights
-Notes from my continuous learning journey
-📸 Preview
+## Build
 
-Coming soon! Screenshots and a live demo will be added once the website is ready.
-
-🌍 Live Website
-
-🔗 Portfolio: Your Website URL
-
-🔗 GitHub: Your GitHub Profile
-
-🗺️ Roadmap
-Build the portfolio homepage
-Add an About Me section
-Showcase personal projects
-Create a blog section
-Add contact and social media links
-Make the website fully responsive
-Deploy the website
-Continuously publish new blog posts
-🤝 Contributions
-
-This is a personal project, but suggestions, feedback, and ideas are always welcome!
-
-Feel free to open an issue or connect with me.
-
-📄 License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-💙 Support
-
-If you find my work interesting, consider giving this repository a ⭐ on GitHub!
-
-Built with passion, curiosity, and a commitment to continuous learning. 💻✨
+```bash
+npm run build
+npm run lint
+npm run preview
+```
